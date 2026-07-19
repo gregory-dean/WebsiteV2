@@ -1,0 +1,34 @@
+---
+title: Email Breach Checker
+summary: Python CLI for bulk email breach detection using the Have I Been Pwned API, with structured CSV reports for assessments and investigations.
+date: 2026-02-15
+kind: project
+role: Tooling
+tags:
+  - Python
+  - OSINT
+  - Automation
+  - HIBP
+links:
+  - label: View on GitHub
+    href: https://github.com/gregory-dean/Email-Breach-Checker
+---
+
+## Overview
+
+Email Breach Checker reads email addresses from a text or CSV file, queries the Have I Been Pwned API, and writes grouped summary results to CSV. It is built for security assessments and investigations where you need structured breach exposure data across many accounts.
+
+## Capabilities
+
+- Bulk lookups from `.txt` (one email per line) or `.csv` input
+- Summary CSV with breach counts, titles, domains, dates, and compromised data types
+- Failed-lookup log with HTTP status and error detail
+- Configurable request delay and API key via environment or CLI
+
+## Stack
+
+- Python 3.10+
+- Have I Been Pwned API
+- MIT licensed
+
+Source, install steps, and examples are in the [Email Breach Checker repository](https://github.com/gregory-dean/Email-Breach-Checker).

@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# gregory-dean.com
 
-## Getting Started
+Personal portfolio for Gregory Dean — cybersecurity practitioner.
 
-First, run the development server:
+## Stack
+
+- Next.js (static export)
+- Tailwind CSS
+- GSAP
+- Three.js / React Three Fiber
+- MDX content for work and writing
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Static output lands in `out/`.
 
-## Learn More
+## Content
 
-To learn more about Next.js, take a look at the following resources:
+| Path | Purpose |
+|------|---------|
+| `content/work/*.mdx` | Projects and articles (`kind: project` or `kind: article`) |
+| `src/data/experience.ts` | Homepage Experience tree |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Edit note frontmatter (`title`, `summary`, `date`, `kind`, `tags`, etc.) and the MDX body. Site links and contact details live in `src/lib/site.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy (GitHub Pages + custom domain)
 
-## Deploy on Vercel
+1. Create a GitHub repository and push this folder to `main`.
+2. In the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. The workflow in `.github/workflows/deploy.yml` builds and publishes `out/`.
+4. In **Settings → Pages → Custom domain**, set `gregory-dean.com` (and optionally `www.gregory-dean.com`).
+5. At your DNS registrar, point the domain at GitHub Pages:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   **Apex (`gregory-dean.com`)** — A records:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   - `185.199.108.153`
+   - `185.199.109.153`
+   - `185.199.110.153`
+   - `185.199.111.153`
+
+   Optional AAAA records (IPv6) per [GitHub Pages custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+
+   **`www`** — CNAME to `<your-username>.github.io`.
+
+6. Wait for DNS, then enable **Enforce HTTPS** in the Pages settings.
+
+`public/CNAME` already contains `gregory-dean.com` so the custom domain survives deploys.
