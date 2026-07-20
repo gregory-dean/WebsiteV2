@@ -18,7 +18,7 @@ export const experience: ExperienceNode[] = [
     org: "KD Roofing",
     period: "2026 — Present",
     summary:
-      "Bridge business needs and technology — improving systems, processes, and how teams use tools day to day.",
+      "Drive operational improvements by bridging business processes and technology. Design internal software, perform IT and security assessments, streamline workflows, and help teams adopt more effective systems.",
   },
   {
     id: "evolve-security",
@@ -26,7 +26,7 @@ export const experience: ExperienceNode[] = [
     org: "Evolve Security Academy",
     period: "2025",
     summary:
-      "Hands-on cybersecurity training covering defensive and offensive fundamentals in a structured academy program.",
+      "Completed immersive, hands-on training in offensive and defensive cybersecurity through real-world labs covering penetration testing, threat detection, incident response, Active Directory, and security operations.",
   },
   {
     id: "soiltech-wireless",
@@ -34,6 +34,6 @@ export const experience: ExperienceNode[] = [
     org: "Soiltech Wireless",
     period: "2024 — 2026",
     summary:
-      "Supported systems, users, and wireless infrastructure — troubleshooting, maintenance, and day-to-day IT operations.",
+      "Provided technical support for users, systems, and wireless infrastructure. Diagnosed hardware and software issues, maintained IT equipment, and ensured reliable day-to-day operations.",
   },
 ];
