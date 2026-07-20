@@ -17,6 +17,7 @@ export type NoteMeta = {
   role?: string;
   featured?: boolean;
   draft?: boolean;
+  image?: string;
   links?: { label: string; href: string }[];
   readingMinutes: number;
 };
@@ -60,6 +61,7 @@ function toNoteMeta(
     role: data.role ? String(data.role) : undefined,
     featured: Boolean(data.featured),
     draft: Boolean(data.draft),
+    image: data.image ? String(data.image) : undefined,
     links: Array.isArray(data.links)
       ? (data.links as { label: string; href: string }[])
       : undefined,

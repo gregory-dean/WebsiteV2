@@ -23,7 +23,7 @@ export default function WorkPage() {
       </header>
       <div className="mt-12 border-b border-rule">
         {notes.map((note) => (
-          <NoteCard key={note.slug} note={note} />
+          <NoteCard key={note.slug} note={note} showImage />
         ))}
       </div>
     </div>

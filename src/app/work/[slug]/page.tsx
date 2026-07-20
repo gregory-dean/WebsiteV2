@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MdxContent } from "@/components/MdxContent";
+import { ProjectImage } from "@/components/ProjectImage";
 import {
   formatDate,
   getNote,
@@ -87,6 +88,16 @@ export default async function WorkItemPage({ params }: PageProps) {
                 {link.label}
               </a>
             ))}
+          </div>
+        ) : null}
+        {meta.image ? (
+          <div className="mt-10">
+            <ProjectImage
+              src={meta.image}
+              alt={meta.title}
+              variant="cover"
+              priority
+            />
           </div>
         ) : null}
       </header>
